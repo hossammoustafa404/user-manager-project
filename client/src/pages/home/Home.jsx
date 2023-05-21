@@ -68,9 +68,16 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    fetch("/api/v1/users")
-      .then((res) => res.json())
-      .then((data) => setData(data));
+    const fetchData = async () => {
+      try {
+        const { data } = await axios.get("/api/v1/users");
+        setData(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   let dataSource = [];
