@@ -12,6 +12,7 @@ const errorHandler = require("./middleware/errorHandler");
 // Middlewares
 app.use(cors());
 app.use(express.json());
+app.use(express.static("../client/build"));
 
 // Home route
 app.get("/", (req, res) => res.send("Hello World!"));
