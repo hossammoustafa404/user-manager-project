@@ -68,7 +68,7 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/users")
+    fetch("/api/v1/users")
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
